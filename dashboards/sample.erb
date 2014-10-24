@@ -1,0 +1,23 @@
+<% content_for :title do %>Cloud Mining Stats<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
+      <i class="icon-time icon-background"></i>
+    </li>
+
+  
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="Test Dash Board" data-moreinfo="Protip: Widgets lassen sich verchieben ;)"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="btc_deposit" data-view="Number" data-title="Estimated-Earnings" data-suffix="BTC"style="background-color:#96bf48;"></div>
+    </li>
+   <center>
+  <div style="font-size: 12px">
+  <!--  Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome
+     -->
+  </div>
+  </center>
+</div>
