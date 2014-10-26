@@ -5,7 +5,7 @@ MAINTAINER dbiesecke <dbiesecke@nothing.com>
 ADD ./run.sh /run.sh
 
 ADD ./ /dashing
-RUN test -f /dashing/Gemfile.lock && rm /dashing/Gemfile.lock
+RUN test -f /dashing/Gemfile.lock || rm /dashing/Gemfile.lock
 RUN apt-get update
 RUN apt-get install libxml2 libxml2-dev ruby2.0 ruby-nokogiri -f -y
 RUN apt-get build-dep ruby-nokogiri -y -f 
