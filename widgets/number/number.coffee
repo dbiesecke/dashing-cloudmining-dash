@@ -1,6 +1,9 @@
 class Dashing.Number extends Dashing.Widget
   @accessor 'current', Dashing.AnimatedValue
 
+  Dashing.on 'ready', ->
+    Dashing.debugMode = true
+  
   @accessor 'difference', ->
     if @get('last')
       last = parseInt(@get('last'))
