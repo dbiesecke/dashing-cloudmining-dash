@@ -1,11 +1,14 @@
-FROM frvi/ruby
+FROM ubuntu:14.04
 
 MAINTAINER dbiesecke <dbiesecke@nothing.com>
 
 ADD ./run.sh /run.sh
 
 ADD ./ /dashing
-RUN gem install nokogiri -- --use-system-libraries
+RUN test -f /dashing/Gemfile.lock && rm /dashing/Gemfile.lock
+RUN apt-get update
+RUN apt-get install libxml2 libxml2-dev ruby2.0 ruby-nokogiri -f -y
+RUN apt-get build-dep ruby-nokogiri -y -f 
 RUN gem install bundle
 RUN gem install dashing
 
