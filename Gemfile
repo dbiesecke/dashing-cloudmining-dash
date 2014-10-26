@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'dashing'
-gem 'nokogiri'
+gem 'nokogiri', '>=1.6.3.1'
 gem 'htmlentities'
 
 ## Remove this if you don't need a twitter widget.
