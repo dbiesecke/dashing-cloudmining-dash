@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM frvi/ruby
 
 MAINTAINER dbiesecke <dbiesecke@nothing.com>
 
@@ -6,10 +6,8 @@ ADD ./run.sh /run.sh
 
 ADD ./ /dashing
 RUN apt-get update
-RUN apt-get install libxml2 libxml2-dev ruby2.0 ruby-nokogiri -f -y
-RUN apt-get build-dep ruby-nokogiri -y -f 
-RUN gem install bundle
-RUN gem install dashing
+RUN apt-get install build-essential libxml2-dev libxslt1-dev nodejs sqlite3 libsqlite3-dev libc-ares2 ruby-json ruby-multi-json ruby-oj ruby-yajl -y -f
+RUN gem install --no-rdoc --no-ri bundle dashing execjs rails
 
 RUN cd /dashing && bundle
 RUN ln -s /dashing/dashboards /dashboards && \
