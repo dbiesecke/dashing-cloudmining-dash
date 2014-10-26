@@ -5,8 +5,7 @@ MAINTAINER dbiesecke <dbiesecke@nothing.com>
 ADD ./run.sh /run.sh
 
 ADD ./ /dashing
-ADD ./ /dashing
-
+RUN gem install nokogiri -- --use-system-libraries
 RUN gem install bundle
 RUN gem install dashing
 
