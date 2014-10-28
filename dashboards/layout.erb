@@ -30,11 +30,10 @@ var client = new Keen({
 Keen.ready(function(){
   var query = new Keen.Query("average", {
     eventCollection: "Zencloud",
-    timeframe: "this_day",
-    targetProperty: "est_payoutBTC",
-    interval: "hourly",
-    groupBy: "est_payoutBTC",
-    filters: [{"property_name":"est_payoutBTC","operator":"exists","property_value":true}]
+    timeframe: "this_week",
+    targetProperty: "current",
+    interval: "daily",
+    groupBy: "btc_addr"
   });
   client.draw(query, document.getElementById("mychart"), {
     // Custom configuration here
